@@ -1,0 +1,51 @@
+# Data Modeling for Employees database
+
+employees
+-
+# emp_no is a primary key,
+# also found in dept_manager, dept_emp, and salaries 
+emp_no INT PK
+# each employee has a title id
+emp_title_id VARCHAR FK >- titles.title_id
+birth_date DATE
+first_name VARCHAR
+last_name VARCHAR
+sex VARCHAR
+hire_date DATE
+
+departments
+-
+# dept_no is a primary key,
+# also found in dept_manager and dept_emp
+dept_no VARCHAR PK
+dept_name VARCHAR
+
+dept_manager
+-
+# dept_no from departments is a primary as well as
+# foreign key for dept_manager
+dept_no VARCHAR PK FK >- departments.dept_no
+# emp_no from employees is a foreign Key for dept_manager
+emp_no INT PK FK >- employees.emp_no
+
+dept_emp
+-
+# emp_no from employees is a primary as well as 
+# Foreign Key for dept_emp
+emp_no INT PK FK >- employees.emp_no 
+# dept_no from departments is a primary as well as 
+# foreign key for dept_emp
+dept_no VARCHAR PK FK >- departments.dept_no
+
+titles
+-
+# title_id is a primary key, 
+# also found in employees as emp_title_id
+title_id VARCHAR PK
+title VARCHAR
+
+salaries
+-
+# emp_no from employees is a primary key
+emp_no INT PK FK >- employees.emp_no 
+salary INT 
