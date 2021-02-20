@@ -206,3 +206,9 @@ plt.savefig("./Images/average_salary_by_title.png", bbox_inches='tight')
 plt.show()
 ```
 ![](https://github.com/poonam-ux/SQL-Challenge_Employee_db_Data_Engineering/blob/main/EmployeeSQL/Images/average_salary_by_title.png)
+```
+# Check a specific employee ID in database
+emp_id_temp = pd.read_sql('SELECT*FROM employees WHERE emp_no=499942', connection)
+emp_id_temp
+```
+![](https://github.com/poonam-ux/SQL-Challenge_Employee_db_Data_Engineering/blob/main/EmployeeSQL/Images/emp_id_check.png)
