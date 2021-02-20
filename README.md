@@ -131,6 +131,7 @@ employee_salary_df = pd.read_sql("select * from salaries", connection)
 # Diplaye the head
 employee_salary_df.head()
 ```
+![](https://github.com/poonam-ux/SQL-Challenge_Employee_db_Data_Engineering/blob/main/EmployeeSQL/Images/employee_salaries_dataframe.png)
 ```
 # Plot the histogram
 plt.figure(figsize=(12, 8))
