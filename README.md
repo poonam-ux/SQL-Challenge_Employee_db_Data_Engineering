@@ -183,6 +183,7 @@ average_salary_by_title
 avg_salary_df = average_salary_by_title.reset_index()
 avg_salary_df
 ```
+![](https://github.com/poonam-ux/SQL-Challenge_Employee_db_Data_Engineering/blob/main/EmployeeSQL/Images/avg_salary_by_title.png)
 ```
 # Plot the data
 # Set x_axis, y_axis & Tick Locations
