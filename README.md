@@ -13,7 +13,7 @@ You will design the tables to hold data in the CSVs, import the CSVs into a SQL 
 
 Inspect the CSVs and sketch out an ERD of the tables. The entities are employees, departments, salaries, titles, department_managers, and department_employees.
 
-The ER diagram looks as follows: 
+* The ER diagram looks as follows: 
 
 ![](https://github.com/poonam-ux/SQL-Challenge_Employee_db_Data_Engineering/blob/main/EmployeeSQL/Images/ERD_original_size.png)
 
@@ -25,7 +25,7 @@ Use the information you have to create a table schema for each of the six CSV fi
 
 After importing all the CSVs, analyze the data-
 
-1. list the following details of each employee: employee number, last name, first name, sex, and salary
+1. List the following details of each employee: employee number, last name, first name, sex, and salary
 
 ```
 SELECT employees.emp_no, employees.last_name, employees.first_name, employees.sex, salaries.salary
@@ -34,7 +34,7 @@ JOIN salaries
 ON employees.emp_no = salaries.emp_no;
 ```
    
-2. list first name, last name, and hire date for employees who were hired in 1986.
+2. List first name, last name, and hire date for employees who were hired in 1986.
 
 ```
 SELECT first_name, last_name, hire_date 
@@ -42,7 +42,7 @@ FROM employees
 WHERE hire_date BETWEEN '1986-01-01' AND '1987-01-01';
 ```
  
-3. list the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name. employee number, last name, first name.
+3. List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name. employee number, last name, first name.
 ```
 SELECT departments.dept_no, departments.dept_name, dept_manager.emp_no, employees.last_name, employees.first_name
 FROM departments
@@ -52,7 +52,7 @@ JOIN employees
 ON dept_manager.emp_no = employees.emp_no;
 ```
 
-4. list the department of each employee with the following information: employee number, last name, first name, and department name.
+4. List the department of each employee with the following information: employee number, last name, first name, and department name.
 ```
 SELECT dept_emp.emp_no, employees.last_name, employees.first_name, departments.dept_name
 FROM dept_emp
@@ -62,7 +62,7 @@ JOIN departments
 ON dept_emp.dept_no = departments.dept_no;
 ```
 
-5. list first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
+5. List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
 
 ```
 SELECT first_name, last_name,sex
@@ -71,7 +71,7 @@ WHERE first_name = 'Hercules'
 AND last_name LIKE 'B%';
 ```
 
-6. list all employees in the Sales department, including their employee number, last name, first name, and department name.
+6. List all employees in the Sales department, including their employee number, last name, first name, and department name.
 
 ```
 SELECT dept_emp.emp_no, employees.last_name, employees.first_name, departments.dept_name
@@ -83,7 +83,7 @@ ON dept_emp.dept_no = departments.dept_no
 WHERE departments.dept_name = 'Sales';
 ```
 
-7. list all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
+7. List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
 
 ```
 SELECT dept_emp.emp_no, employees.last_name, employees.first_name, departments.dept_name
