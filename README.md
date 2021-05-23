@@ -33,7 +33,8 @@ FROM employees
 JOIN salaries
 ON employees.emp_no = salaries.emp_no;
 ```
-   
+![](https://github.com/poonam-ux/SQL-Employee_db_Data_Engineering/blob/main/EmployeeSQL/Images/Employee_db_analysis_1.png)
+
 2. List first name, last name, and hire date for employees who were hired in 1986.
 
 ```
@@ -41,6 +42,7 @@ SELECT first_name, last_name, hire_date
 FROM employees
 WHERE hire_date BETWEEN '1986-01-01' AND '1987-01-01';
 ```
+![](https://github.com/poonam-ux/SQL-Employee_db_Data_Engineering/blob/main/EmployeeSQL/Images/Employee_db_analysis_2.png)
  
 3. List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name. employee number, last name, first name.
 ```
@@ -51,6 +53,7 @@ ON departments.dept_no = dept_manager.dept_no
 JOIN employees
 ON dept_manager.emp_no = employees.emp_no;
 ```
+![](https://github.com/poonam-ux/SQL-Employee_db_Data_Engineering/blob/main/EmployeeSQL/Images/Employee_db_analysis_3.png)
 
 4. List the department of each employee with the following information: employee number, last name, first name, and department name.
 ```
@@ -61,6 +64,7 @@ ON dept_emp.emp_no = employees.emp_no
 JOIN departments
 ON dept_emp.dept_no = departments.dept_no;
 ```
+![](https://github.com/poonam-ux/SQL-Employee_db_Data_Engineering/blob/main/EmployeeSQL/Images/Employee_db_analysis_4.png)
 
 5. List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
 
@@ -70,6 +74,7 @@ FROM employees
 WHERE first_name = 'Hercules'
 AND last_name LIKE 'B%';
 ```
+![](https://github.com/poonam-ux/SQL-Employee_db_Data_Engineering/blob/main/EmployeeSQL/Images/Employee_db_analysis_5.png)
 
 6. List all employees in the Sales department, including their employee number, last name, first name, and department name.
 
@@ -82,6 +87,7 @@ JOIN departments
 ON dept_emp.dept_no = departments.dept_no
 WHERE departments.dept_name = 'Sales';
 ```
+![](https://github.com/poonam-ux/SQL-Employee_db_Data_Engineering/blob/main/EmployeeSQL/Images/Employee_db_analysis_6.png)
 
 7. List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
 
@@ -95,6 +101,8 @@ ON dept_emp.dept_no = departments.dept_no
 WHERE departments.dept_name = 'Sales' 
 OR departments.dept_name = 'Development'
 ```
+![](https://github.com/poonam-ux/SQL-Employee_db_Data_Engineering/blob/main/EmployeeSQL/Images/Employee_db_analysis_7.png)
+
 8. In descending order, list the frequency count of employee last names, i.e., how many employees share each last name.
 
 ```
@@ -105,6 +113,8 @@ GROUP BY last_name
 ORDER BY
 COUNT(last_name) DESC;
 ```
+![](https://github.com/poonam-ux/SQL-Employee_db_Data_Engineering/blob/main/EmployeeSQL/Images/Employee_db_analysis_8.png)
+
 ## 4. Data Testing and Visualization using Python
 
 ```
